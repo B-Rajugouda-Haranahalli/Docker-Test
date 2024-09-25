@@ -160,7 +160,7 @@ services:
     restart: always
 
   cwb.simulation:
-    image: ${DOCKER_REGISTRY-}cwbsimulation
+    image: rajugouda/cwbsimulation
     build:
       context: .
       dockerfile: CWB.Simulation/Dockerfile
