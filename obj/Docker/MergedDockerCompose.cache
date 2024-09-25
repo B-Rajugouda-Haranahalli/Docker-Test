@@ -7,7 +7,7 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: http://+:80
-    image: cwbapigateway
+    image: rajugouda/cwbapigateway
     networks:
       cwb-network: null
     ports:
@@ -43,7 +43,7 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: https://+:443;http://+:80
-    image: cwbapp
+    image: rajugouda/cwbapp
     networks:
       cwb-network: null
     ports:
@@ -90,7 +90,7 @@ services:
         required: true
     environment:
       ASPNETCORE_ENVIRONMENT: Development
-    image: cwbbusinessprocesses
+    image: rajugouda/cwbbusinessprocesses
     links:
       - db
     networks:
@@ -126,7 +126,7 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: https://+:443;http://+:80
-    image: cwbcompanysettings
+    image: rajugouda/cwbcompanysettings
     links:
       - db
     networks:
@@ -171,7 +171,7 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: https://+:443;http://+:80
-    image: cwbidentity
+    image: rajugouda/cwbidentity
     links:
       - db
     networks:
@@ -215,7 +215,7 @@ services:
         required: true
     environment:
       ASPNETCORE_ENVIRONMENT: Development
-    image: cwbmasters
+    image: rajugouda/cwbmasters
     links:
       - db
     networks:
@@ -251,7 +251,7 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: https://+:443;http://+:80
-    image: cwbmodules
+    image: rajugouda/cwbmodules
     links:
       - db
     networks:
@@ -295,7 +295,7 @@ services:
         required: true
     environment:
       ASPNETCORE_ENVIRONMENT: Development
-    image: cwbproductionplanwo
+    image: rajugouda/cwbproductionplanwo
     links:
       - db
     networks:
@@ -331,7 +331,7 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: https://+:443;http://+:80
-    image: cwbsimulation
+    image: rajugouda/cwbsimulation
     links:
       - db
     networks:
@@ -376,7 +376,7 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: https://+:443;http://+:80
-    image: cwbtenant
+    image: rajugouda/cwbtenant
     links:
       - db
     networks:

@@ -124,20 +124,7 @@ namespace CWB.App
             }
             //app.UseHttpsRedirection();
             app.UseStaticFiles();
-            //    app.UseRewriter(new RewriteOptions()
-            //.AddRewrite(@"^WorkOrder/SoToWo(.*)", "http://192.168.1.101:9005/WorkOrder/$1", skipRemainingRules: true));
-            //app.Use(async (context, next) => {
-            //    var url = context.Request.Path.Value;
-            //    if (url.Contains("/SOWO"))
-            //    {
-            //        context.Response.Redirect("/WorkOrder/SoToWo");
-            //        return;
-            //    }
-            //    await next();
-            //});
-  //          var rewrite = new RewriteOptions()
-  //.AddRewrite("WorkOrder/SoToWo", "HiddenFeature", true);
-  //          app.UseRewriter(rewrite);
+
             app.UseRouting();
             
             if (_enableAuth)
@@ -150,13 +137,6 @@ namespace CWB.App
                     endpoints.MapDefaultControllerRoute()
                         .RequireAuthorization();
                 });
-                //app.UseEndpoints(endpoints =>
-                //{
-                //    endpoints.MapControllerRoute(
-                //        name: "HiddenFeature",
-                //        pattern: "HiddenFeature",
-                //        defaults: new { controller = "WorkOrder", action = "SoToWo" });
-                //});
             }
             //app.UseEndpoints(endpoints =>
             //{

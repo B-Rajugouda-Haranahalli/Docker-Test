@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   cwb.apigateway:
-    image: cwbapigateway:dev
+    image: rajugouda/cwbapigateway:dev
     container_name: CWB.ApiGateway
     build:
       target: base
@@ -29,7 +29,7 @@ services:
       com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
     tty: true
   cwb.app:
-    image: cwbapp:dev
+    image: rajugouda/cwbapp:dev
     container_name: CWB.App
     build:
       target: base
@@ -57,7 +57,7 @@ services:
     tty: true
 
   cwb.businessaquisition:
-    image: cwbbusinessprocesses:dev
+    image: rajugouda/cwbbusinessprocesses:dev
     container_name: CWB.BusinessAquisition
     build:
       target: base
@@ -85,7 +85,7 @@ services:
     tty: true
 
   cwb.companysettings:
-    image: cwbcompanysettings:dev
+    image: rajugouda/cwbcompanysettings:dev
     container_name: CWB.CompanySettings
     build:
       labels:
@@ -112,7 +112,7 @@ services:
     tty: true
 
   cwb.identity:
-    image: cwbidentity:dev
+    image: rajugouda/cwbidentity:dev
     container_name: CWB.Identity
     build:
       target: base
@@ -140,7 +140,7 @@ services:
     tty: true
 
   cwb.masters:
-    image: cwbmasters:dev
+    image: rajugouda/cwbmasters:dev
     container_name: CWB.Masters
     build:
       target: base
@@ -168,7 +168,7 @@ services:
     tty: true
 
   cwb.modules:
-    image: cwbmodules:dev
+    image: rajugouda/cwbmodules:dev
     container_name: CWB.Modules
     build:
       target: base
@@ -196,7 +196,7 @@ services:
     tty: true
 
   cwb.productionplanwo:
-    image: cwbproductionplanwo:dev
+    image: rajugouda/cwbproductionplanwo:dev
     container_name: CWB.ProductionPlanWO
     build:
       target: base
@@ -224,7 +224,7 @@ services:
     tty: true
 
   cwb.simulation:
-    image: cwbsimulation:dev
+    image: rajugouda/cwbsimulation:dev
     container_name: CWB.Simulation
     build:
       target: base
@@ -252,7 +252,7 @@ services:
     tty: true
 
   cwb.tenant:
-    image: cwbtenant:dev
+    image: rajugouda/cwbtenant:dev
     container_name: CWB.Tenant
     build:
       target: base
