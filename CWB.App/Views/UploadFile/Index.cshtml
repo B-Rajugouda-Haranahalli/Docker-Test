@@ -1,0 +1,13 @@
+﻿@model string
+
+<h2>Upload File to FTP Server</h2>
+
+<form asp-action="UploadFileToFtp" method="post" enctype="multipart/form-data">
+    <input type="file" name="uploadedFile" />
+    <button type="submit">Upload</button>
+</form>
+
+@if (!string.IsNullOrEmpty(ViewBag.Message))
+{
+    <p>@ViewBag.Message</p>
+}

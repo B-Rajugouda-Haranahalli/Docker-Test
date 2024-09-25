@@ -1,0 +1,280 @@
+version: '3.8'
+
+services:
+  cwb.apigateway:
+    image: cwbapigateway:dev
+    container_name: CWB.ApiGateway
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "CWB.ApiGateway"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_cwb.apigateway$
+    volumes:
+      - D:\NEWCWB\CWB\CWB.ApiGateway:/app
+      - D:\NEWCWB\CWB:/src
+      - C:\Users\MicroApt\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_cwb.apigateway$
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_cwb.apigateway$ \"/app/bin/Debug/net5.0/CWB.ApiGateway.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
+  cwb.app:
+    image: cwbapp:dev
+    container_name: CWB.App
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "CWB.App"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_cwb.app$
+    volumes:
+      - D:\NEWCWB\CWB\CWB.App:/app
+      - D:\NEWCWB\CWB:/src
+      - C:\Users\MicroApt\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_cwb.app$
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_cwb.app$ \"/app/bin/Debug/netcoreapp3.1/CWB.App.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
+
+  cwb.businessaquisition:
+    image: cwbbusinessprocesses:dev
+    container_name: CWB.BusinessAquisition
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "CWB.BusinessAquisition"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_cwb.businessaquisition$
+    volumes:
+      - D:\NEWCWB\CWB\CWB.BusinessAquisition:/app
+      - D:\NEWCWB\CWB:/src
+      - C:\Users\MicroApt\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_cwb.businessaquisition$
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_cwb.businessaquisition$ \"/app/bin/Debug/netcoreapp3.1/CWB.BusinessAquisition.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
+
+  cwb.companysettings:
+    image: cwbcompanysettings:dev
+    container_name: CWB.CompanySettings
+    build:
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "CWB.CompanySettings"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_cwb.companysettings$
+    volumes:
+      - D:\NEWCWB\CWB\CWB.CompanySettings:/app
+      - D:\NEWCWB\CWB:/src
+      - C:\Users\MicroApt\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_cwb.companysettings$
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_cwb.companysettings$ \"/app/bin/Debug/netcoreapp3.1/CWB.CompanySettings.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
+
+  cwb.identity:
+    image: cwbidentity:dev
+    container_name: CWB.Identity
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "CWB.Identity"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_cwb.identity$
+    volumes:
+      - D:\NEWCWB\CWB\CWB.Identity:/app
+      - D:\NEWCWB\CWB:/src
+      - C:\Users\MicroApt\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_cwb.identity$
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_cwb.identity$ \"/app/bin/Debug/netcoreapp3.1/CWB.Identity.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
+
+  cwb.masters:
+    image: cwbmasters:dev
+    container_name: CWB.Masters
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "CWB.Masters"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_cwb.masters$
+    volumes:
+      - D:\NEWCWB\CWB\CWB.Masters:/app
+      - D:\NEWCWB\CWB:/src
+      - C:\Users\MicroApt\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_cwb.masters$
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_cwb.masters$ \"/app/bin/Debug/netcoreapp3.1/CWB.Masters.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
+
+  cwb.modules:
+    image: cwbmodules:dev
+    container_name: CWB.Modules
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "CWB.Modules"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_cwb.modules$
+    volumes:
+      - D:\NEWCWB\CWB\CWB.Modules:/app
+      - D:\NEWCWB\CWB:/src
+      - C:\Users\MicroApt\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_cwb.modules$
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_cwb.modules$ \"/app/bin/Debug/netcoreapp3.1/CWB.Modules.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
+
+  cwb.productionplanwo:
+    image: cwbproductionplanwo:dev
+    container_name: CWB.ProductionPlanWO
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "CWB.ProductionPlanWO"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_cwb.productionplanwo$
+    volumes:
+      - D:\NEWCWB\CWB\CWB.ProductionPlanWO:/app
+      - D:\NEWCWB\CWB:/src
+      - C:\Users\MicroApt\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_cwb.productionplanwo$
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_cwb.productionplanwo$ \"/app/bin/Debug/netcoreapp3.1/CWB.ProductionPlanWO.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
+
+  cwb.simulation:
+    image: cwbsimulation:dev
+    container_name: CWB.Simulation
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "CWB.Simulation"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_cwb.simulation$
+    volumes:
+      - D:\NEWCWB\CWB\CWB.Simulation:/app
+      - D:\NEWCWB\CWB:/src
+      - C:\Users\MicroApt\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_cwb.simulation$
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_cwb.simulation$ \"/app/bin/Debug/netcoreapp3.1/CWB.Simulation.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
+
+  cwb.tenant:
+    image: cwbtenant:dev
+    container_name: CWB.Tenant
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "CWB.Tenant"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_cwb.tenant$
+    volumes:
+      - D:\NEWCWB\CWB\CWB.Tenant:/app
+      - D:\NEWCWB\CWB:/src
+      - C:\Users\MicroApt\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_cwb.tenant$
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_cwb.tenant$ \"/app/bin/Debug/netcoreapp3.1/CWB.Tenant.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
