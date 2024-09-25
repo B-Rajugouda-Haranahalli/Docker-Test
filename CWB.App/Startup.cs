@@ -111,14 +111,14 @@ namespace CWB.App
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseCookiePolicy(new CookiePolicyOptions { MinimumSameSitePolicy = SameSiteMode.Strict });
-            //if (env.IsDevelopment())
-            //{
-                app.UseDeveloperExceptionPage();
-                IdentityModelEventSource.ShowPII = true;
-            //}
             if (env.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
+            }
+            else
+            {
+                app.UseDeveloperExceptionPage();
+                IdentityModelEventSource.ShowPII = true;
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 //app.UseHsts();
             }
