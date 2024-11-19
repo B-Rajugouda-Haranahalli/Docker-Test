@@ -663,11 +663,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\NEWCWB\\CWB\\CWB.ExceptionHandling\\CWB.ExceptionHandling.csproj",
+      "projectUniqueName": "D:\\DockerTestCWB\\CWB\\CWB.ExceptionHandling\\CWB.ExceptionHandling.csproj",
       "projectName": "CWB.ExceptionHandling",
-      "projectPath": "D:\\NEWCWB\\CWB\\CWB.ExceptionHandling\\CWB.ExceptionHandling.csproj",
+      "projectPath": "D:\\DockerTestCWB\\CWB\\CWB.ExceptionHandling\\CWB.ExceptionHandling.csproj",
       "packagesPath": "C:\\Users\\MicroApt\\.nuget\\packages\\",
-      "outputPath": "D:\\NEWCWB\\CWB\\CWB.ExceptionHandling\\obj\\",
+      "outputPath": "D:\\DockerTestCWB\\CWB\\CWB.ExceptionHandling\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -688,11 +688,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\NEWCWB\\CWB\\CWB.Constants\\CWB.Constants.csproj": {
-              "projectPath": "D:\\NEWCWB\\CWB\\CWB.Constants\\CWB.Constants.csproj"
+            "D:\\DockerTestCWB\\CWB\\CWB.Constants\\CWB.Constants.csproj": {
+              "projectPath": "D:\\DockerTestCWB\\CWB\\CWB.Constants\\CWB.Constants.csproj"
             },
-            "D:\\NEWCWB\\CWB\\CWB.Logging\\CWB.Logging.csproj": {
-              "projectPath": "D:\\NEWCWB\\CWB\\CWB.Logging\\CWB.Logging.csproj"
+            "D:\\DockerTestCWB\\CWB\\CWB.Logging\\CWB.Logging.csproj": {
+              "projectPath": "D:\\DockerTestCWB\\CWB\\CWB.Logging\\CWB.Logging.csproj"
             }
           }
         }

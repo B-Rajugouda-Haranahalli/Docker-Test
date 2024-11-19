@@ -3298,11 +3298,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\NEWCWB\\CWB\\CWB.Email\\CWB.Email.csproj",
+      "projectUniqueName": "D:\\DockerTestCWB\\CWB\\CWB.Email\\CWB.Email.csproj",
       "projectName": "CWB.Email",
-      "projectPath": "D:\\NEWCWB\\CWB\\CWB.Email\\CWB.Email.csproj",
+      "projectPath": "D:\\DockerTestCWB\\CWB\\CWB.Email\\CWB.Email.csproj",
       "packagesPath": "C:\\Users\\MicroApt\\.nuget\\packages\\",
-      "outputPath": "D:\\NEWCWB\\CWB\\CWB.Email\\obj\\",
+      "outputPath": "D:\\DockerTestCWB\\CWB\\CWB.Email\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3323,14 +3323,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\NEWCWB\\CWB\\CWB.Extensions\\CWB.Extensions.csproj": {
-              "projectPath": "D:\\NEWCWB\\CWB\\CWB.Extensions\\CWB.Extensions.csproj"
+            "D:\\DockerTestCWB\\CWB\\CWB.Extensions\\CWB.Extensions.csproj": {
+              "projectPath": "D:\\DockerTestCWB\\CWB\\CWB.Extensions\\CWB.Extensions.csproj"
             },
-            "D:\\NEWCWB\\CWB\\CWB.Logging\\CWB.Logging.csproj": {
-              "projectPath": "D:\\NEWCWB\\CWB\\CWB.Logging\\CWB.Logging.csproj"
+            "D:\\DockerTestCWB\\CWB\\CWB.Logging\\CWB.Logging.csproj": {
+              "projectPath": "D:\\DockerTestCWB\\CWB\\CWB.Logging\\CWB.Logging.csproj"
             },
-            "D:\\NEWCWB\\CWB\\CWB.Notification\\CWB.Notification.csproj": {
-              "projectPath": "D:\\NEWCWB\\CWB\\CWB.Notification\\CWB.Notification.csproj"
+            "D:\\DockerTestCWB\\CWB\\CWB.Notification\\CWB.Notification.csproj": {
+              "projectPath": "D:\\DockerTestCWB\\CWB\\CWB.Notification\\CWB.Notification.csproj"
             }
           }
         }

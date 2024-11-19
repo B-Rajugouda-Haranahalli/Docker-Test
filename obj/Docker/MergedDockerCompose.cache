@@ -1,13 +1,13 @@
-name: dockercompose5248707436933016553
+name: dockercompose9801295138175428149
 services:
   cwb.apigateway:
     build:
-      context: D:\NEWCWB\CWB
+      context: D:\DockerTestCWB\CWB
       dockerfile: CWB.ApiGateway/Dockerfile
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: http://+:80
-    image: rajugouda/cwbapigateway
+    image: shankar84kl/cwbapigateway
     networks:
       cwb-network: null
     ports:
@@ -38,12 +38,12 @@ services:
           create_host_path: true
   cwb.app:
     build:
-      context: D:\NEWCWB\CWB
+      context: D:\DockerTestCWB\CWB
       dockerfile: CWB.App/Dockerfile
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: https://+:443;http://+:80
-    image: rajugouda/cwbapp
+    image: shankar84kl/cwbapp
     networks:
       cwb-network: null
     ports:
@@ -64,7 +64,7 @@ services:
     restart: always
     volumes:
       - type: bind
-        source: D:\NEWCWB\CWB\files
+        source: D:\DockerTestCWB\CWB\files
         target: /files
         bind:
           create_host_path: true
@@ -82,7 +82,7 @@ services:
           create_host_path: true
   cwb.businessaquisition:
     build:
-      context: D:\NEWCWB\CWB
+      context: D:\DockerTestCWB\CWB
       dockerfile: CWB.BusinessAquisition/Dockerfile
     depends_on:
       db:
@@ -90,7 +90,7 @@ services:
         required: true
     environment:
       ASPNETCORE_ENVIRONMENT: Development
-    image: rajugouda/cwbbusinessprocesses
+    image: shankar84kl/cwbbusinessprocesses
     links:
       - db
     networks:
@@ -117,7 +117,7 @@ services:
           create_host_path: true
   cwb.companysettings:
     build:
-      context: D:\NEWCWB\CWB
+      context: D:\DockerTestCWB\CWB
       dockerfile: CWB.CompanySettings/Dockerfile
     depends_on:
       db:
@@ -126,7 +126,7 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: https://+:443;http://+:80
-    image: rajugouda/cwbcompanysettings
+    image: shankar84kl/cwbcompanysettings
     links:
       - db
     networks:
@@ -162,7 +162,7 @@ services:
           create_host_path: true
   cwb.identity:
     build:
-      context: D:\NEWCWB\CWB
+      context: D:\DockerTestCWB\CWB
       dockerfile: CWB.Identity/Dockerfile
     depends_on:
       db:
@@ -171,7 +171,7 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: https://+:443;http://+:80
-    image: rajugouda/cwbidentity
+    image: shankar84kl/cwbidentity
     links:
       - db
     networks:
@@ -207,7 +207,7 @@ services:
           create_host_path: true
   cwb.masters:
     build:
-      context: D:\NEWCWB\CWB
+      context: D:\DockerTestCWB\CWB
       dockerfile: CWB.Masters/Dockerfile
     depends_on:
       db:
@@ -215,7 +215,7 @@ services:
         required: true
     environment:
       ASPNETCORE_ENVIRONMENT: Development
-    image: rajugouda/cwbmasters
+    image: shankar84kl/cwbmasters
     links:
       - db
     networks:
@@ -242,7 +242,7 @@ services:
           create_host_path: true
   cwb.modules:
     build:
-      context: D:\NEWCWB\CWB
+      context: D:\DockerTestCWB\CWB
       dockerfile: CWB.Modules/Dockerfile
     depends_on:
       db:
@@ -251,7 +251,7 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: https://+:443;http://+:80
-    image: rajugouda/cwbmodules
+    image: shankar84kl/cwbmodules
     links:
       - db
     networks:
@@ -287,7 +287,7 @@ services:
           create_host_path: true
   cwb.productionplanwo:
     build:
-      context: D:\NEWCWB\CWB
+      context: D:\DockerTestCWB\CWB
       dockerfile: CWB.ProductionPlanWO/Dockerfile
     depends_on:
       db:
@@ -295,7 +295,7 @@ services:
         required: true
     environment:
       ASPNETCORE_ENVIRONMENT: Development
-    image: rajugouda/cwbproductionplanwo
+    image: shankar84kl/cwbproductionplanwo
     links:
       - db
     networks:
@@ -322,7 +322,7 @@ services:
           create_host_path: true
   cwb.simulation:
     build:
-      context: D:\NEWCWB\CWB
+      context: D:\DockerTestCWB\CWB
       dockerfile: CWB.Simulation/Dockerfile
     depends_on:
       db:
@@ -331,7 +331,7 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: https://+:443;http://+:80
-    image: rajugouda/cwbsimulation
+    image: shankar84kl/cwbsimulation
     links:
       - db
     networks:
@@ -367,7 +367,7 @@ services:
           create_host_path: true
   cwb.tenant:
     build:
-      context: D:\NEWCWB\CWB
+      context: D:\DockerTestCWB\CWB
       dockerfile: CWB.Tenant/Dockerfile
     depends_on:
       db:
@@ -376,7 +376,7 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: https://+:443;http://+:80
-    image: rajugouda/cwbtenant
+    image: shankar84kl/cwbtenant
     links:
       - db
     networks:
@@ -497,4 +497,4 @@ networks:
     driver: bridge
 volumes:
   my-db:
-    name: dockercompose5248707436933016553_my-db
+    name: dockercompose9801295138175428149_my-db

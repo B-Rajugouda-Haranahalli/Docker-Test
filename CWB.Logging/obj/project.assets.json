@@ -543,11 +543,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\NEWCWB\\CWB\\CWB.Logging\\CWB.Logging.csproj",
+      "projectUniqueName": "D:\\DockerTestCWB\\CWB\\CWB.Logging\\CWB.Logging.csproj",
       "projectName": "CWB.Logging",
-      "projectPath": "D:\\NEWCWB\\CWB\\CWB.Logging\\CWB.Logging.csproj",
+      "projectPath": "D:\\DockerTestCWB\\CWB\\CWB.Logging\\CWB.Logging.csproj",
       "packagesPath": "C:\\Users\\MicroApt\\.nuget\\packages\\",
-      "outputPath": "D:\\NEWCWB\\CWB\\CWB.Logging\\obj\\",
+      "outputPath": "D:\\DockerTestCWB\\CWB\\CWB.Logging\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
