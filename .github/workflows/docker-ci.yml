@@ -3,7 +3,7 @@ name: CI/CD Pipelines
 on:
   push:
     branches:
-      - main  # Adjust branch as needed
+      - main  
   pull_request:
 
 jobs:
